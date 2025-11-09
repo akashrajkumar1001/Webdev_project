@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modular Window Design</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/figma-base.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+
+    <!-- JS -->
+    <script defer src="/js/script.js"></script>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #059669, #10b981, #2dd4bf);
+        margin: 0;
+        overflow-x: hidden;
+        font-family: system-ui, sans-serif;
+      }
+
+    button {
+      position: relative;
+      z-index: 9999;
+   }
+
+
+      .buttons-container {
+        margin-top: 100px;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .buttons-container button {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #1e293b;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .buttons-container button:hover {
+        transform: scale(1.05);
+        background: white;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      #theme-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.6rem 0.8rem;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      #theme-toggle:hover {
+        transform: rotate(20deg) scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body>
+   
+
+    <div class="buttons-container">
+      <button onclick="showModal(1)">Show modal 1</button>
+      <button onclick="showModal(2)">Show modal 2</button>
+      <button onclick="showModal(3)">Show modal 3</button>
+    </div>
+
+    <%- include('partials/modal') %>
+    <script defer src="/js/script.js"></script>
+  </body>
+</html>
